@@ -6,8 +6,6 @@ public class Player extends Human{
     private String supply;
     private String meal;
     private int money;
-//    private final int nrOfPlayers = random.nextInt(4) + 1;
-    private final int nrOfPlayers = 1;
     public String getFood() {
         return food;
     }
@@ -46,14 +44,9 @@ public class Player extends Human{
 
     public Player(){
         this.money = random.nextInt(201);
+        playerNr++;
 //        System.out.println("Player: " +  name + " has " + money + " $");
     }
-
-//    public void formPlayerList(){
-//        for(int i = 0; i < nrOfPlayers; i++){
-//            customersList.add(new Player());
-//        }
-//    }
 
     public void greeting(){
         System.out.println("Player: Hello, I am "

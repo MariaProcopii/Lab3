@@ -1,25 +1,30 @@
 import java.util.ArrayList;
 
 public class Admin extends Human{
-    private final int nrOfTables = 3;
+    private final int nrOfTables = 15;
     private Player player;
     private Table table;
+    private int number;
 
-    public Admin(Player player, Table table){
+    public Admin(Player player, Table table, int number){
         this.table= table;
         this.player = player;
+        this.number = number;
     }
 
-    public void provideTable(ArrayList<Player> customersList) {     //ArrayList<Player> customersList, int i
+    public int provideTable(ArrayList<Player> customersList) {     //ArrayList<Player> customersList, int i
 
-        if ((customersList.size() - 1)  < nrOfTables) {
+        if ((number)  < nrOfTables) {
             System.out.println("Admin: We have free space. Please take a seat at table " + (table.getNumber() + 1));
             customersList.get(table.getNumber()).opinion++;
             reputation++;
+            servicedPlayers++;
+            return 1;
         }
         else{
             System.out.println("Admin: Sorry, we don't have space in restaurant.");
-            reputation--;
+            reputation -= 20;
+            return 0;
         }
     }
 
