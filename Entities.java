@@ -7,16 +7,16 @@ abstract class Entities extends SuperClass {
 
     public void qualityCheck() {
         if (qualityIndex == 1) {
-            reputation--;
+            setReputation(-1);
             System.out.println("It looks so bad... Gross.");
         }
         else if (qualityIndex == 2) {
-            reputation++;
+            setReputation(1);
             System.out.println("It looks quite nice.\n");
 
         }
         else {
-            reputation +=2;
+            setReputation(2);
             System.out.println("It loos so perfect !\n");
         }
     }
@@ -28,10 +28,10 @@ abstract class Entities extends SuperClass {
             if(qualityIndex == 1){
                 System.out.println("Sorry, can you change it ?");
                 switch (string) {
-                    case "Card" -> cardNr++;
-                    case "Deck" -> deckNr++;
-                    case "Meal" -> mealNr++;
-                    case "Menu" -> menuNr++;
+                    case "Card" -> setCardNr();
+                    case "Deck" -> setDeckNr();
+                    case "Meal" -> setMealNr();
+                    case "Menu" -> setMenuNr();
                 }
             }
         }

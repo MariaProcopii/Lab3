@@ -3,9 +3,9 @@ import java.util.Random;
 
 public class Waiter extends Human{
 
-    private Menu menu;
-    private Meal meal;
-    private Player player;
+    private final Menu menu;
+    private final Meal meal;
+    private final Player player;
     int bill;
     int polite;                                     // 1 = bad, 2 = good, 3 = nice;
 
@@ -18,25 +18,22 @@ public class Waiter extends Human{
 
     public void greeting(){
         switch (polite) {
-
-            case 3:
+            case 3 -> {
                 System.out.println("Waiter: Good morning. " + player.name +
-                                    " My name is " + name + ". What do you want to order ?");
-                player.opinion+=2;
-                reputation+=2;
-                break;
-
-            case 2:
+                        " My name is " + name + ". What do you want to order ?");
+                player.opinion += 2;
+                setReputation(2);
+            }
+            case 2 -> {
                 System.out.println("Waiter: Hallo. What do you want to order ?");
                 player.opinion++;
-                reputation++;
-                break;
-
-            case 1:
+                setReputation(1);
+            }
+            case 1 -> {
                 System.out.println("Waiter: Are you ready or not to make an order ?!");
                 player.opinion--;
-                reputation--;
-                break;
+                setReputation(-2);
+            }
         }
     }
 
@@ -47,8 +44,8 @@ public class Waiter extends Human{
 
     public void goodBye(){
         if(polite == 1){
-            System.out.println("Waiter: stop yelling at me!");
-            reputation--;
+            System.out.println("Waiter: stop yelling at me !");
+            setReputation(-2);
         }
     }
 
@@ -61,7 +58,7 @@ public class Waiter extends Human{
         System.out.println("Waiter: Thanks " + player.name + ". Your order will be ready as soon as possible.");
     }
 
-    public void bringBill(){   //after cook here we can call cook
+    public void bringBill(){
         menu.createFoodMenu();
         menu.createSuppMenu();
         int bill1 = menu.getFoodWithPrice().get(player.getFood());

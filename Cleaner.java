@@ -30,7 +30,7 @@ public class Cleaner extends Human{
 
         if (answer) {
             table.player.opinion++;
-            reputation++;
+            setReputation(2);
             greeting();
             speak();
             System.out.println("Cleaner: Table " + (table.getNumber() + 1) + " was cleaned :) ");
@@ -38,7 +38,7 @@ public class Cleaner extends Human{
         }
         else {
             table.player.opinion--;
-            reputation--;
+            setReputation(-1);
             greeting();
             speak();
             goodBye();

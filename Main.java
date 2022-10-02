@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
-import static java.lang.System.exit;
-
 public class Main extends SuperClass {
     public static void main(String[] args){
 
-        int nrOfPlayers = 20;
+
+        int nrOfPlayers = 12;
         ArrayList<Player> customersList = new ArrayList<>();
         for(int i = 0; i < nrOfPlayers; i++){
             customersList.add(new Player());
@@ -40,9 +39,8 @@ public class Main extends SuperClass {
             barman.greeting();
             waiter.bringBill();
             player.goodBye();
-
+//            admin.printStatistic();
         }
-        System.out.print(cardNr + "\n" + deckNr + "\n" + menuNr + "\n" +
-                         reputation + "\n" + mealNr + "\n" + playerNr + "\n" + servicedPlayers);
+        customersList.get(0).printStatistic();
     }
 }

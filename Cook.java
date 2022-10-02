@@ -1,9 +1,9 @@
 public class Cook extends Human {
 
-    private Meal meal;
-    private Waiter waiter;
-    private Player player;
-    private Table table;
+    private final Meal meal;
+    private final Waiter waiter;
+    private final Player player;
+    private final Table table;
 
     public Cook(Meal meal, Waiter waiter, Player player, Table table){
         this.meal = meal;
@@ -45,14 +45,20 @@ public class Cook extends Human {
     }
 
     public void goodBye(){
-        if(waiter.polite < 3){
-            System.out.println("Cook: " + waiter.name + " you're working so slow. Now everything is cold.");
+        if(waiter.polite == 1){
+            System.out.println("Cook: " + waiter.name + " you're working so slow. " +
+                               "Now everything is cold. I need to redo the order! ");
             waiter.goodBye();
-            reputation--;
+            setMealNr();
+            setReputation(-2);
+        }
+        if(waiter.polite == 2){
+            System.out.println("Cook: " + waiter.name + " you're working so slow.");
+            setReputation(-1);
         }
         else {
             System.out.println("Cook: " + waiter.name + " you're just in time.");
-            reputation++;
+            setReputation(1);
         }
     }
 

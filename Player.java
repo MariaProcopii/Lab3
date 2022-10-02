@@ -44,7 +44,7 @@ public class Player extends Human{
 
     public Player(){
         this.money = random.nextInt(201);
-        playerNr++;
+        setPlayerNr();
 //        System.out.println("Player: " +  name + " has " + money + " $");
     }
 
