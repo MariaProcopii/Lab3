@@ -20,7 +20,7 @@ public class Meal extends Entities{
         this.menu = menu;
     }
 
-    void pickFood(){
+    public void pickFood(){
         Random random = new Random();
         int rand1 = random.nextInt(menu.getFoodList().length);
         int rand2 = random.nextInt(menu.getSuppliesList().length);
@@ -29,7 +29,7 @@ public class Meal extends Entities{
         System.out.println("Player: " + player.name + " wants to order " + food + " with " + supply + ".");
     }
 
-    void stopListCheck(){
+    public void stopListCheck(){
         menu.stopList();
         if(food.equals(menu.getFoodFromSL())){
             player.opinion--;

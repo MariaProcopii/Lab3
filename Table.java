@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Table extends Entities {
-    Player player;
+    private Player player;
     private final int number;              // table index
 
     public int getNumber() {

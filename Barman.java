@@ -27,7 +27,7 @@ public class Barman extends Human {
         }
     }
 
-    void playGame(){
+    public void playGame(){
 
         Random random = new Random();
         speak();

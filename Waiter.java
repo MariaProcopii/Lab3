@@ -6,8 +6,8 @@ public class Waiter extends Human{
     private final Menu menu;
     private final Meal meal;
     private final Player player;
-    int bill;
-    int polite;                                     // 1 = bad, 2 = good, 3 = nice;
+    public int bill;
+    public int polite;                                     // 1 = bad, 2 = good, 3 = nice;
 
     public Waiter(Menu menu, Meal meal, Player player){
         this.menu = menu;
