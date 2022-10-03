@@ -29,7 +29,7 @@ public class Cleaner extends Human{
         cleanOrNot();
 
         if (answer) {
-            table.player.opinion++;
+            player.opinion++;
             setReputation(2);
             greeting();
             speak();
@@ -37,7 +37,7 @@ public class Cleaner extends Human{
             goodBye();
         }
         else {
-            table.player.opinion--;
+            player.opinion--;
             setReputation(-1);
             greeting();
             speak();
