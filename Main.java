@@ -11,7 +11,10 @@ public class Main extends SuperClass {
         }
 
         for(int i = 0; i < customersList.size(); i++){
-            System.out.println("\n Restaurant Simulation Nr: [" + (i + 1) + "]\n");
+            System.out.println("\n====================================");
+            System.out.println("Restaurant Simulation Nr: [" + (i + 1) + "]");
+            System.out.println("====================================\n");
+
             Player player = customersList.get(i);
             Table table = new Table(i, player);
             Admin admin = new Admin(player, table, i);
